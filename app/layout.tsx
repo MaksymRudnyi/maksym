@@ -1,11 +1,11 @@
-import './globals.css'
-import {Providers} from "./providers";
-import { Inter } from 'next/font/google'
+import "./globals.css";
+import { Providers } from "./providers";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
