@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { ForWho } from "./ForWho";
+export { Author } from "./Author";
+export { CourseStructure } from "./CourseStructure";
+export { Feedback } from "./Feedback";
+export { YourResults } from "./YourResults";
+export { Curriculum } from "./Curriculum";
+export { FAQ } from "./FAQ";
+export { Invite } from "./Invite";
