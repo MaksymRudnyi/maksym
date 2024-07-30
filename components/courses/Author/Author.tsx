@@ -1,10 +1,14 @@
+import Image from "next/image";
+
+import myPhoto from "@/public/png/me.png";
+
 export const Author = () => {
   return (
     <section>
       <div className={"container mx-auto px-4 sm:px-6"}>
-        <div className={"flex flex-row gap-6 py-24"}>
-          <div>img</div>
-          <div>
+        <div className={"flex flex-col gap-6 py-24 md:flex-row"}>
+          <Image src={myPhoto} alt={"Maksym Rudnyi"} className={"flex-1"} />
+          <div className={"flex flex-1 flex-col gap-4"}>
             <h2 className={"h2"}>Привіт, я Рудний Максим.</h2>
             <p>
               Я тут, щоб змінити ваш підхід до програмування. За свої 11 років у
