@@ -17,7 +17,7 @@ export const Curriculum = () => {
                 <li>Аналіз та моніторинг якості коду</li>
                 <li>Документування та обговорення результатів</li>
               </ol>
-              <p className={"font-bold leading-10"}>
+              <p className={"text-lg font-bold leading-10"}>
                 Практичні приклади та кейси
               </p>
             </div>

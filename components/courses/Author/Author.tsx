@@ -6,13 +6,13 @@ export const Author = () => {
   return (
     <section>
       <div className={"container mx-auto px-4 sm:px-6"}>
-        <div className={"flex flex-col gap-6 py-24 md:flex-row"}>
+        <div className={"flex flex-col gap-6 pb-24 pt-12 md:flex-row"}>
           <Image src={myPhoto} alt={"Maksym Rudnyi"} className={"flex-1"} />
           <div className={"flex flex-1 flex-col gap-4"}>
             <h2 className={"h2"}>Привіт, я Рудний Максим.</h2>
             <p>
               Я тут, щоб змінити ваш підхід до програмування. За свої 11 років у
-              front-end розробці, я не просто писав код; я майстрував мистецтво
+              Front-End розробці, я не просто писав код; я освоював мистецтво
               створення чистого, ефективного коду, який не тільки працює, але й
               викликає захоплення у кожного, хто його бачить.
             </p>

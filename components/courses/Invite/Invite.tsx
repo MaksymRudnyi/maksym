@@ -1,6 +1,5 @@
+import { Countdown, ModalSignIn } from "@/components";
 import { Button } from "@nextui-org/button";
-
-import { Countdown } from "@/components/Countdown";
 
 export const Invite = () => {
   return (
@@ -14,8 +13,8 @@ export const Invite = () => {
                 за
               </h3>
               <p className={"text-8xl font-bold"}>360 грн</p>
-              <p className={"text-5xl line-through"}>1440 грн</p>
-              <Button color={"success"}>Отримати доступ</Button>
+              <p className={"old-price text-5xl"}>1440 грн</p>
+              <ModalSignIn cta={"Отримати доступ"} />
             </div>
           </div>
           <div className={"flex-1"}>
@@ -27,6 +26,10 @@ export const Invite = () => {
             <div className={"flex justify-center py-10"}>
               <Countdown hours={3} />
             </div>
+            <p className={"font-bold text-secondary"}>
+              Ви нічим не ризикуєте - якщо курс вам несподобається я поверну вам
+              кошти без зайвих запитань
+            </p>
           </div>
         </div>
       </div>

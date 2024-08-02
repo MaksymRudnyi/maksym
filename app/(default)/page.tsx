@@ -1,4 +1,4 @@
-import ButtonComponent from "../../components/button";
+import Link from "next/link";
 
 export const metadata = {
   title: "App Router",
@@ -6,10 +6,11 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-      <a href="/api/auth/login">Login</a>
-      <ButtonComponent />
-    </h1>
+    <>
+      <h1 className="text-3xl font-bold underline">
+        Офіційний сайт Рудного Максима
+      </h1>
+      <Link href="/courses">Глянути курси</Link>
+    </>
   );
 }

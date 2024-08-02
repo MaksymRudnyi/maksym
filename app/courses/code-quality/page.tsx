@@ -1,3 +1,5 @@
+import { FixedContainer } from "@/components";
+
 import {
   Author,
   CourseStructure,
@@ -9,6 +11,7 @@ import {
   Invite,
   YourResults,
 } from "@/components/courses";
+import { ModalSignIn } from "@/components/courses/components/ModalSignIn";
 
 export const metadata = {
   title: "code quality page",
@@ -27,6 +30,7 @@ export default function Page() {
       <Curriculum />
       <Invite />
       <FAQ />
+      <FixedContainer />
     </>
   );
 }

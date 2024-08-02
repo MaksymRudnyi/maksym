@@ -1,5 +1,8 @@
-const { nextui } = require("@nextui-org/react");
 /** @type {import('tailwindcss').Config} */
+// import mobileCourseProgramBG from "./public/webp/programming-bg.webp";
+
+const { nextui } = require("@nextui-org/react");
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -23,6 +26,9 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+      },
+      backgroundImage: {
+        "mobile-course-program": "url('/webp/programming-bg.webp')",
       },
     },
   },

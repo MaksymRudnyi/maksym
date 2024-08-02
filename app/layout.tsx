@@ -1,6 +1,11 @@
+import { Inter } from "next/font/google";
+
+import { Footer } from "@/components";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+
 import "./globals.css";
 import { Providers } from "./providers";
-import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +23,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
             {children}
+            <Footer />
           </div>
         </Providers>
       </body>

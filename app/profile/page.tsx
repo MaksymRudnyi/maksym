@@ -1,14 +1,15 @@
 import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function ProfileServer() {
-  const { user } = await getSession();
+  const session = await getSession();
+  const user = session?.user || {};
 
   return (
     user && (
       <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <img src={user?.picture} alt={user?.name} />
+        <h2>{user?.name}</h2>
+        <p>{user?.email}</p>
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </div>
     )
