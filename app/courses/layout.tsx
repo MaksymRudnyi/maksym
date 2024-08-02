@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 
 import { Navigation } from "@/components";
-import { UserSession } from "@/types/UserSession";
+import { UserProfile } from "@/types/UserProfile";
 import { getSession } from "@auth0/nextjs-auth0";
 
 type LayoutProps = {
@@ -9,11 +9,11 @@ type LayoutProps = {
 };
 
 const Layout: FC<LayoutProps> = async ({ children }) => {
-  const session: UserSession = await getSession();
+  const session = await getSession();
 
   return (
     <>
-      <Navigation user={session?.user} />
+      <Navigation user={session?.user as UserProfile} />
       {children}
     </>
   );
