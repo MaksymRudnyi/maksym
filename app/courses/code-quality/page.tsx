@@ -11,7 +11,6 @@ import {
   Invite,
   YourResults,
 } from "@/components/courses";
-import { ModalSignIn } from "@/components/courses/components/ModalSignIn";
 
 export const metadata = {
   title: "code quality page",
