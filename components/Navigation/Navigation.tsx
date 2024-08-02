@@ -5,6 +5,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 import { AvatarMenu, LoginButton } from "@/components";
+import { UserProfile } from "@/types/UserProfile";
 import {
   Link,
   Navbar,
@@ -18,12 +19,12 @@ import {
 
 const menuItems = ["Курси", "Послуги", "Блог", "Контакти"];
 
-export const Navigation = ({ user }) => {
+export const Navigation = ({ user }: { user: UserProfile }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
-  const isActive = (href) => {
-    return pathname.indexOf(href) === 0;
+  const isActive = (href: string) => {
+    return pathname?.indexOf(href) === 0;
   };
 
   return (

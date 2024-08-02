@@ -18,7 +18,7 @@ export const Countdown: FC<CountdownProps> = ({ hours, isPrimaryText }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const formatTime = (time) => String(time).padStart(2, "0");
+  const formatTime = (time: number) => String(time).padStart(2, "0");
 
   const hoursLeft = Math.floor(time / 3600);
   const minutesLeft = Math.floor((time % 3600) / 60);

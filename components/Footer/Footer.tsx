@@ -37,9 +37,8 @@ const socials = [
 
 export const Footer = () => {
   const pathname = usePathname();
-  console.log("pathname", pathname);
 
-  const isWithFixedContainer = pathname.indexOf("/courses/") === 0;
+  const isWithFixedContainer = pathname?.indexOf("/courses/") === 0;
   const footerClasses = clsx(isWithFixedContainer && "pb-16");
   return (
     <footer className={footerClasses}>

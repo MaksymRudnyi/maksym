@@ -1,8 +1,15 @@
+import { FC, ReactNode } from "react";
+
 import { Navigation } from "@/components";
+import { UserSession } from "@/types/UserSession";
 import { getSession } from "@auth0/nextjs-auth0";
 
-const Layout = async ({ children }) => {
-  const session = await getSession();
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout: FC<LayoutProps> = async ({ children }) => {
+  const session: UserSession = await getSession();
 
   return (
     <>

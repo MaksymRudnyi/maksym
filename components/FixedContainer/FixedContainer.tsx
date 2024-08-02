@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 
 import { ModalSignIn } from "@/components";
-import { Button, Container } from "@nextui-org/react";
 import clsx from "clsx";
 
 import { debounce } from "@/app/utils/debounce";
@@ -15,7 +14,6 @@ export const FixedContainer = () => {
     const handleScroll = debounce(() => {
       const scrollTop = window.scrollY;
 
-      console.log("scrollTop", scrollTop);
       if (scrollTop > 200) {
         setShowNavbar(true);
       } else {

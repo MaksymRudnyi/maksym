@@ -1,3 +1,4 @@
+import { UserProfile } from "@/types/UserProfile";
 import {
   Avatar,
   Dropdown,
@@ -7,7 +8,7 @@ import {
   Link,
 } from "@nextui-org/react";
 
-export const AvatarMenu = ({ user }) => {
+export const AvatarMenu = ({ user }: { user: UserProfile }) => {
   return (
     <Dropdown placement="bottom-end">
       <DropdownTrigger>
