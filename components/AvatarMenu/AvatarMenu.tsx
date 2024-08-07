@@ -1,4 +1,5 @@
-import { signOut } from "@/auth";
+import { signOut } from "next-auth/react";
+
 import { UserProfile } from "@/types/UserProfile";
 import {
   Avatar,
@@ -29,11 +30,7 @@ export const AvatarMenu = ({ user }: { user: UserProfile }) => {
           <p className="font-semibold">{user.email}</p>
         </DropdownItem>
 
-        <DropdownItem
-          key="logout"
-          color="danger"
-          onClick={async () => await signOut()}
-        >
+        <DropdownItem key="logout" color="danger" onClick={() => signOut()}>
           Вийти
         </DropdownItem>
       </DropdownMenu>

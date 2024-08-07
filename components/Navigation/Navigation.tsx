@@ -4,7 +4,7 @@ import React from "react";
 
 import { usePathname } from "next/navigation";
 
-import { AvatarMenu, LoginButton } from "@/components";
+import { AvatarMenu, SignInButtonWithModal } from "@/components";
 import { UserProfile } from "@/types/UserProfile";
 import {
   Link,
@@ -61,7 +61,7 @@ export const Navigation = ({ user }: { user: UserProfile }) => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        {user?.id ? <AvatarMenu user={user} /> : <LoginButton />}
+        {user?.email ? <AvatarMenu user={user} /> : <SignInButtonWithModal />}
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (

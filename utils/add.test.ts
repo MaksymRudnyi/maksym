@@ -1,4 +1,5 @@
 import { expect, test, vi } from "vitest";
+
 import { add } from "./add";
 
 // Disables a package that checks that code is only executed on the server side.

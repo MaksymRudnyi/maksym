@@ -24,7 +24,7 @@ export const Invite = () => {
               До закінчення акції залишилось:
             </p>
             <div className={"flex justify-center py-10"}>
-              <Countdown hours={3} />
+              <Countdown />
             </div>
             <p className={"font-bold text-secondary"}>
               Ви нічим не ризикуєте - якщо курс вам несподобається я поверну вам

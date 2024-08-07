@@ -3,9 +3,8 @@
 import React, { useEffect, useState } from "react";
 
 import { ModalSignIn } from "@/components";
+import { debounce } from "@/utils/debounce";
 import clsx from "clsx";
-
-import { debounce } from "@/app/utils/debounce";
 
 export const FixedContainer = () => {
   const [showNavbar, setShowNavbar] = useState(false);

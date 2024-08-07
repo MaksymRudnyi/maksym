@@ -2,13 +2,16 @@
 
 import React, { FC, useEffect, useState } from "react";
 
+import { useCountdown } from "@/hooks/useCountdown";
+
 type CountdownProps = {
-  hours: number;
   isPrimaryText?: boolean;
 };
 
-export const Countdown: FC<CountdownProps> = ({ hours, isPrimaryText }) => {
-  const [time, setTime] = useState(hours * 60 * 60);
+export const Countdown: FC<CountdownProps> = ({ isPrimaryText }) => {
+  const { timeLeft } = useCountdown();
+
+  const [time, setTime] = useState(timeLeft);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,6 +20,10 @@ export const Countdown: FC<CountdownProps> = ({ hours, isPrimaryText }) => {
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    setTime(timeLeft);
+  }, [timeLeft]);
 
   const formatTime = (time: number) => String(time).padStart(2, "0");
 
