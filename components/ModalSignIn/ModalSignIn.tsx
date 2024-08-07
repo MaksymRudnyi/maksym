@@ -2,7 +2,6 @@
 
 import React, { FC } from "react";
 
-import { useUser } from "@auth0/nextjs-auth0/client";
 import {
   Button,
   Modal,
@@ -21,7 +20,7 @@ type ModalSignInProps = {
 
 export const ModalSignIn: FC<ModalSignInProps> = ({ cta }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const { user } = useUser();
+  const user = {};
   return (
     <>
       <Button color={"success"} onPress={onOpen}>

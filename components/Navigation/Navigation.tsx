@@ -61,7 +61,7 @@ export const Navigation = ({ user }: { user: UserProfile }) => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        {user ? <AvatarMenu user={user} /> : <LoginButton />}
+        {user?.id ? <AvatarMenu user={user} /> : <LoginButton />}
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (

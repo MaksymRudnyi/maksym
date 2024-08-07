@@ -1,3 +1,4 @@
+import { signOut } from "@/auth";
 import { UserProfile } from "@/types/UserProfile";
 import {
   Avatar,
@@ -19,7 +20,7 @@ export const AvatarMenu = ({ user }: { user: UserProfile }) => {
           color="secondary"
           name={user.name}
           size="sm"
-          src={user.picture}
+          src={user.image}
         />
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
@@ -31,8 +32,7 @@ export const AvatarMenu = ({ user }: { user: UserProfile }) => {
         <DropdownItem
           key="logout"
           color="danger"
-          as={Link}
-          href={"/api/auth/logout"}
+          onClick={async () => await signOut()}
         >
           Вийти
         </DropdownItem>
