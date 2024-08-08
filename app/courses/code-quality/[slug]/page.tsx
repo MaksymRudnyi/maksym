@@ -18,8 +18,14 @@ const VIDEOS = {
       "Advanced React. Повний курс по React з прикладами. React Context, Suspense, Performance. Частина 3",
   },
 };
+type VideoKey = keyof typeof VIDEOS;
 
 export const Page = ({ params }: { params: { slug: string } }) => {
+  const videoKey = params.slug as VideoKey;
+  const video = VIDEOS[videoKey];
+  if (!video) {
+    return <p>Video not found</p>; // Fallback if the video is not found
+  }
   return (
     <section>
       <div className={"h-screen"}>
@@ -38,14 +44,13 @@ export const Page = ({ params }: { params: { slug: string } }) => {
             <iframe
               className={"aspect-video w-full"}
               id="ytplayer"
-              type="text/html"
-              src={`https://www.youtube.com/embed/${VIDEOS[params.slug].id}?controls=1&wmode=transparent&rel=0&showinfo=0&enablejsapi=1&modestbranding=1`}
+              src={`https://www.youtube.com/embed/${video.id}?controls=1&wmode=transparent&rel=0&showinfo=0&enablejsapi=1&modestbranding=1`}
               frameBorder="0"
-              allowfullscreen
+              allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
             <div className={"mt-4"}>
-              <p>{VIDEOS[params.slug].title}</p>
+              <p>{video.title}</p>
             </div>
           </div>
           <div className={"flex flex-col gap-2 border-t-1 px-4 pt-4"}>
