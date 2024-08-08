@@ -20,7 +20,7 @@ const VIDEOS = {
 };
 type VideoKey = keyof typeof VIDEOS;
 
-export const Page = ({ params }: { params: { slug: string } }) => {
+const Page = ({ params }: { params: { slug: string } }) => {
   const videoKey = params.slug as VideoKey;
   const video = VIDEOS[videoKey];
   if (!video) {
