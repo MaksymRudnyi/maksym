@@ -5,7 +5,7 @@ export const Invite = () => {
   return (
     <section className={"bg-primary"}>
       <div className="container mx-auto px-4 sm:px-6">
-        <div className={"flex flex-col gap-10 py-24 md:flex-row"}>
+        <div className={"flex flex-col gap-10 py-24 lg:flex-row"}>
           <div className={"flex-1"}>
             <div className={"flex flex-col gap-6 text-secondary"}>
               <h3 className={"text-4xl"}>

@@ -22,8 +22,11 @@ type ModalSignInProps = {
 export const ModalSignIn: FC<ModalSignInProps> = ({ cta }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { data: session, status } = useSession();
-  const user = session?.user;
 
+  const getAccess = () => {
+    localStorage.setItem("course", "clean-code");
+    window.location.reload();
+  };
   return (
     <>
       <Button color={"success"} onPress={onOpen}>
@@ -71,7 +74,12 @@ export const ModalSignIn: FC<ModalSignInProps> = ({ cta }) => {
                     <p className={"mb-4 text-sm"}>
                       Отримайте доступ до курсу за спеціальною ціною прямо зараз
                     </p>
-                    <Button size={"lg"} color={"success"} className={"w-full"}>
+                    <Button
+                      size={"lg"}
+                      color={"success"}
+                      className={"w-full"}
+                      onClick={getAccess}
+                    >
                       Отримати доступ
                     </Button>
                   </div>

@@ -25,7 +25,7 @@ export const Hero = () => {
           </div>
           <div
             className={
-              "hidden h-[400px] w-[400px] flex-1 bg-cover bg-top bg-no-repeat md:block"
+              "hidden h-[400px] w-[400px] flex-1 bg-cover bg-top bg-no-repeat lg:block"
             }
             style={{ backgroundImage: `url(${me.src})` }}
           ></div>

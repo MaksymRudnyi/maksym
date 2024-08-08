@@ -32,7 +32,7 @@ export const YourResults = () => {
       <div className={"container mx-auto px-4 pt-24 sm:px-6"}>
         <h2 className={"h2 mb-20 text-center"}>Ваші результати після курсу</h2>
 
-        <div className={"flex flex-col gap-20 md:flex-row"}>
+        <div className={"flex flex-col gap-20 lg:flex-row lg:gap-10 xl:gap-20"}>
           {results.map((result, index) => (
             <Card key={index} {...result} />
           ))}

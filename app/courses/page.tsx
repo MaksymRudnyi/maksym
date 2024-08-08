@@ -11,8 +11,8 @@ import {
 const Courses = () => {
   return (
     <>
-      <div className={"container mx-auto px-4 sm:px-6"}>
-        <p>List of courses</p>
+      <div className={"container mx-auto min-h-screen px-4 sm:px-6"}>
+        <p className={"my-6 text-xl"}>Курси</p>
 
         <Link href={"/courses/code-quality"}>
           <Card

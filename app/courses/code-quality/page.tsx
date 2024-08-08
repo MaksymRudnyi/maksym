@@ -12,6 +12,8 @@ import {
   YourResults,
 } from "@/components/courses";
 
+// import { Course } from "./course";
+
 export const metadata = {
   title: "code quality page",
 };

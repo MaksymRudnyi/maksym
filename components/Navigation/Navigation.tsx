@@ -17,7 +17,24 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 
-const menuItems = ["Курси", "Послуги", "Блог", "Контакти"];
+const menuItems = [
+  {
+    label: "Курси",
+    href: "/courses",
+  },
+  {
+    label: "Послуги",
+    href: "/services",
+  },
+  {
+    label: "Блог",
+    href: "/blog",
+  },
+  {
+    label: "Контакти",
+    href: "/contacts",
+  },
+];
 
 export const Navigation = ({ user }: { user: UserProfile }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -26,6 +43,12 @@ export const Navigation = ({ user }: { user: UserProfile }) => {
   const isActive = (href: string) => {
     return pathname?.indexOf(href) === 0;
   };
+
+  const isHidden = pathname?.indexOf("/courses/code-quality/") === 0;
+
+  if (isHidden) {
+    return null;
+  }
 
   return (
     <Navbar
@@ -50,13 +73,16 @@ export const Navigation = ({ user }: { user: UserProfile }) => {
           </Link>
         </NavbarItem>
         <NavbarItem isActive={isActive("/services")}>
-          <Link href="#" aria-current="page">
-            Послуги
-          </Link>
+          <Link href="/services">Послуги</Link>
         </NavbarItem>
         <NavbarItem isActive={isActive("/blog")}>
           <Link color="foreground" href="/blog">
             Блог
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={isActive("/contacts")}>
+          <Link color="foreground" href="/contacts">
+            Контакти
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -65,20 +91,9 @@ export const Navigation = ({ user }: { user: UserProfile }) => {
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
+          <NavbarMenuItem isActive={isActive(item.href)} key={item.href}>
+            <Link className="w-full" href={item.href} size="lg">
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}

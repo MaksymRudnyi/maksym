@@ -12,6 +12,10 @@ export const Feedback = () => {
   const settings = {
     speed: 500,
     arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: true,
+    dots: true,
     responsive: [
       {
         breakpoint: 1024,

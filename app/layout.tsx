@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 
-import { Footer } from "@/components";
+import { auth } from "@/auth";
+import { Footer, Navigation } from "@/components";
+import { UserProfile } from "@/types/UserProfile";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
@@ -12,16 +14,20 @@ const inter = Inter({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+  const user = session?.user || {};
+
   return (
     <html lang="en" className={inter.className}>
       <body>
         <Providers>
-          <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+          <div className="flex min-h-screen flex-col">
+            <Navigation user={user as UserProfile} />
             {children}
             <Footer />
           </div>

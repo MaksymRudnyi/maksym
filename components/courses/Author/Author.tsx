@@ -7,8 +7,11 @@ export const Author = () => {
     <section>
       <div className={"container mx-auto px-4 sm:px-6"}>
         <div className={"flex flex-col gap-6 pb-24 pt-12 md:flex-row"}>
-          <Image src={myPhoto} alt={"Maksym Rudnyi"} className={"flex-1"} />
-          <div className={"flex flex-1 flex-col gap-4"}>
+          <div className={"w-full xl:w-1/3"}>
+            <Image src={myPhoto} alt={"Maksym Rudnyi"} className={"w-full"} />
+          </div>
+
+          <div className={"flex flex-col gap-4 xl:w-2/3"}>
             <h2 className={"h2"}>Привіт, я Рудний Максим.</h2>
             <p>
               Я тут, щоб змінити ваш підхід до програмування. За свої 11 років у
